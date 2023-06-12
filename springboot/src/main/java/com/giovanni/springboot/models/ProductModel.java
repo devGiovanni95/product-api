@@ -1,0 +1,43 @@
+package com.giovanni.springboot.models;
+
+import jakarta.persistence.*;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.UUID;
+
+@Entity /*Definindo que e um tipo de entidade para o mapeamento*/
+@Table(name="TB_PRODUCTS")/*Tabela que se relaciona no banco de dados*/
+public class ProductModel implements Serializable {
+    private static final long seriaVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID idProduct;
+    private String name;
+    private BigDecimal value;
+
+    public UUID getIdProduct() {
+        return idProduct;
+    }
+
+    public void setIdProduct(UUID idProduct) {
+        this.idProduct = idProduct;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public BigDecimal getValue() {
+        return value;
+    }
+
+    public void setValue(BigDecimal value) {
+        this.value = value;
+    }
+}
