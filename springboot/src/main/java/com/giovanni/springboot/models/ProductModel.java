@@ -1,6 +1,7 @@
 package com.giovanni.springboot.models;
 
 import jakarta.persistence.*;
+import org.springframework.hateoas.RepresentationModel;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -8,7 +9,7 @@ import java.util.UUID;
 
 @Entity /*Definindo que e um tipo de entidade para o mapeamento*/
 @Table(name="TB_PRODUCTS")/*Tabela que se relaciona no banco de dados*/
-public class ProductModel implements Serializable {
+public class ProductModel extends RepresentationModel<ProductModel> implements Serializable {
     private static final long seriaVersionUID = 1L;
 
     @Id
